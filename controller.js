@@ -11,10 +11,23 @@ exports.index = function(req, res){
 exports.tampilsemuamontir = function(req,res){
     connection.query('SELECT * FROM t_montir', function(error, rows, fileds){
         if(error){
-            connection.log(error);
+            console.log(error);
         }else {
             response.ok(rows,res)
-        }
+     }
 
     });  
 };
+
+//menampilkan semua data sparepart
+exports.tampilsemuaparepart = function(req,res){
+    connection.query('SELECT * FROM t_sparepart',function(error, rows, fields){
+        if(erros){
+            console.log(error);
+        }else{
+            response.ok(rows,res)
+        }
+    });
+};
+
+
