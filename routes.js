@@ -17,4 +17,7 @@ module.exports = function(app){
 
     app.route('/tambahsparepart')
         .post(jsonku.tambahDataSparepart);
+
+    app.route('/tambahlevel')
+        .post(jsonku.tambahDataLevel);
 }

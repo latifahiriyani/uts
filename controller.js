@@ -64,3 +64,19 @@ exports.tambahDataSparepart = function (req, res) {
     });
 };
 
+
+//menambah data level
+exports.tambahDataLevel = function (req, res) {
+    var nama_level = req.body.nama_level;
+    var role = req.body.role;
+
+    connection.query('INSERT INTO t_level (nama_level,role) VALUES(?,?)',
+    [nama_level,role],
+    function (error, rows, fields) {
+        if (error) {
+            console.log(error);
+        }else {
+            response.ok("Berhasil Menambahkan Data Level", res)
+        }
+    });
+};
