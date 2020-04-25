@@ -26,6 +26,8 @@ module.exports = function(app){
 
     app.route('/tambahlevel')
         .post(jsonku.tambahDataLevel);
-
+        
+    app.route('/tambahuser')
+        .post(jsonku.tambahuser);
 
 }
