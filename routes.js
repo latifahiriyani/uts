@@ -44,4 +44,7 @@ module.exports = function(app){
         
     app.route('/ubahlevel')
         .put(jsonku.ubahlevel);
+
+    app.route('/ubahservis')
+        .put(jsonku.ubahservis);
 }
