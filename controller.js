@@ -43,6 +43,18 @@ exports.tampildatasparepartid = function (req,res){
     });
 };
 
+//menampilkan data montir berdasarkan id
+exports.tampildatamontirid = function (req,res){
+    let id = req.params.id;
+    connection.query('SELECT * FROM t_montir WHERE id_montir = ?', [id],
+    function(error, rows, fields){
+        if(error){
+            console.log(error);
+        }else {
+            response.ok(rows, res);
+        }
+    });
+};
 
 //menambah data montir
 exports.tambahDataMontir = function (req, res) {
