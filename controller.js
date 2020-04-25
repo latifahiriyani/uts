@@ -30,6 +30,20 @@ exports.tampilsemuaparepart = function(req,res){
     });
 };
 
+//menampilkan data sparepart berdasarkan id
+exports.tampildatasparepartid = function (req,res){
+    let id = req.params.id;
+    connection.query('SELECT * FROM t_sparepart WHERE id_sparepart = ?', [id],
+    function(error, rows, fields){
+        if(error){
+            console.log(error);
+        }else {
+            response.ok(rows, res);
+        }
+    });
+};
+
+
 //menambah data montir
 exports.tambahDataMontir = function (req, res) {
     var nama_montir = req.body.nama_montir;
@@ -81,22 +95,3 @@ exports.tambahDataLevel = function (req, res) {
     });
 };
 
-//menambah data user
-exports.tambahDataUser = function (req, res) {
-    var nama_user = req.body.nama_user;
-    var email = req.body.email;
-    var password = req.body.password;
-    var role = req.body.role;
-    var tanggal_daftar = req.body.tanggal_daftar;
-
-
-    connection.query('INSERT INTO t_user (nama_user,email,password,role,tanggal_daftar) VALUES(?,?)',
-    [nama_user,,email,password,role,tanggal_daftar],
-    function (error, rows, fields) {
-        if (error) {
-            console.log(error);
-        }else {
-            response.ok("Berhasil Menambahkan Data User", res)
-        }
-    });
-};

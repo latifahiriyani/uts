@@ -12,6 +12,11 @@ module.exports = function(app){
     app.route('/tampilsparepart')
         .get(jsonku.tampilsemuaparepart);
 
+    app.route('/tampilsparepart/:id')
+        .get(jsonku.tampildatasparepartid);
+
+
+
     app.route('/tambahmontir')
         .post(jsonku.tambahDataMontir);
 
@@ -21,6 +26,5 @@ module.exports = function(app){
     app.route('/tambahlevel')
         .post(jsonku.tambahDataLevel);
 
-    app.route('/tambahuser')
-        .post(jsonku.tambahDataUser);
+
 }
